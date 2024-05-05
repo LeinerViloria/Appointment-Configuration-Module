@@ -3,19 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Module.Shared", "Shared\Configuration.Module.Shared.csproj", "{5961B35E-1630-4F01-8AE4-DC19FC708659}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration.Module.Shared", "Shared\Configuration.Module.Shared.csproj", "{5961B35E-1630-4F01-8AE4-DC19FC708659}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{C6F26150-E746-40F3-99C8-E41413C9651A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Module.Controllers", "Backend\Configuration.Module.Controllers\Configuration.Module.Controllers.csproj", "{35D9C4AE-35BB-4A2B-8731-3552E4BE670D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Configuration.Module.Controllers", "Backend\Configuration.Module.Controllers\Configuration.Module.Controllers.csproj", "{35D9C4AE-35BB-4A2B-8731-3552E4BE670D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration.Module.Backend", "Configuration.Module.Backend\Configuration.Module.Backend.csproj", "{41C287B2-02FF-478B-BDCE-B4F14A1782F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5961B35E-1630-4F01-8AE4-DC19FC708659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -26,8 +25,19 @@ Global
 		{35D9C4AE-35BB-4A2B-8731-3552E4BE670D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35D9C4AE-35BB-4A2B-8731-3552E4BE670D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35D9C4AE-35BB-4A2B-8731-3552E4BE670D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41C287B2-02FF-478B-BDCE-B4F14A1782F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41C287B2-02FF-478B-BDCE-B4F14A1782F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41C287B2-02FF-478B-BDCE-B4F14A1782F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41C287B2-02FF-478B-BDCE-B4F14A1782F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{35D9C4AE-35BB-4A2B-8731-3552E4BE670D} = {C6F26150-E746-40F3-99C8-E41413C9651A}
+		{41C287B2-02FF-478B-BDCE-B4F14A1782F9} = {C6F26150-E746-40F3-99C8-E41413C9651A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4370A7D-AE74-4231-ADEB-26ADD42CC582}
 	EndGlobalSection
 EndGlobal

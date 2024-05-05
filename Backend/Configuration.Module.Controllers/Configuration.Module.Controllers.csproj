@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\SDK\Appointment.SDK.Backend\Appointment.SDK.Backend.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Shared\Configuration.Module.Shared.csproj" />
   </ItemGroup>
 
