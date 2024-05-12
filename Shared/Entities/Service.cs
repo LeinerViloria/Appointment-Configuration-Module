@@ -15,6 +15,9 @@ public class Service : BaseEntity<int>
     public decimal Price { get; set; }
 
     [Required]
+    public EnumRecordStatus Status { get; set; }
+
+    [Required]
     [ForeignKey("Catalogue")]
     public int RowidCatalogue {get; set;}
     public Catalogue? Catalogue{ get; set; }
