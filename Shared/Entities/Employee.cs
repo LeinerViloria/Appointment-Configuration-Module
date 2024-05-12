@@ -5,15 +5,15 @@ using Appointment.SDK.Entities;
 
 namespace Configuration.Entities;
 
-public class Employee : BaseCompany<int>
+public class Employee : BaseUser<int>
 {
     [Required]
     public string Id { get; set; } = null!;
     [Required]
     public string Name { get; set; } = null!;
     [Required]
-    public EnumRecordStatus Status { get; set; }
-    [Required]
     public EnumGender Gender { get; set; }
+    [Required]
+    public bool IsAdmin { get; set; }
 
 }
