@@ -13,7 +13,6 @@ public class Contract : BaseCompany<int>
     public EnumRecordStatus Status { get; set; }
     [Required]
     public DateOnly InitialDate {get; set;}
-    [Required]
     public DateOnly? EndDate {get; set;}
     [ForeignKey("Employee")]
     [Required]
