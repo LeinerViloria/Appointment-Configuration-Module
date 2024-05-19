@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddGlobalConfiguration<ConfigurationContext>(builder.Configuration);
+builder.Services.UseGoogleAuthentication(builder.Configuration);
 
 var app = builder.Build();
 
@@ -23,6 +24,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
