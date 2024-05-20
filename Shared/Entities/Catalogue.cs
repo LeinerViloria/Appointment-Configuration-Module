@@ -5,7 +5,7 @@ using Appointment.SDK.Entities;
 
 namespace Configuration.Entities;
 
-public class Catalogue : BaseCompany<int>
+public class Catalogue : BaseEntity<int>
 {
     [Required]
     public string Name { get; set; } = null!;

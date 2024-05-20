@@ -10,7 +10,7 @@ using Configuration.Entities;
 namespace Appointment.Configuration.Controllers;
 
 [Route("api/[controller]")]
-public class EmployeeController() : StandardController
+public class EmployeeController(IServiceProvider serviceProvider) : StandardController(serviceProvider)
 {
     [HttpGet("login")]
     public IActionResult Login()

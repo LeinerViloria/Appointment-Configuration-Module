@@ -5,7 +5,7 @@ using Appointment.SDK.Entities;
 
 namespace Configuration.Entities;
 
-public class Contract : BaseCompany<int>
+public class Contract : BaseEntity<int>
 {
     [Required]
     public Guid Id { get; set; } = Guid.NewGuid();
