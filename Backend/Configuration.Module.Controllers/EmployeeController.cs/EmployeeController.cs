@@ -3,14 +3,13 @@ using Appointment.SDK.Backend.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Google;
 using Appointment.SDK.Backend.Utilities;
 using Configuration.Entities;
+using Appointment.SDK.Backend.Validations;
 
 namespace Appointment.Configuration.Controllers;
 
-[Route("api/[controller]")]
-public class EmployeeController(IServiceProvider serviceProvider) : StandardController(serviceProvider)
+public class EmployeeController(IServiceProvider serviceProvider) : StandardController<Employee, BaseControllerValidator<Employee>>(serviceProvider)
 {
     [HttpGet("login")]
     public IActionResult Login()
