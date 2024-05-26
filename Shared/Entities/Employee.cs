@@ -16,4 +16,6 @@ public class Employee : BaseUser<int>
     [Required]
     public bool IsAdmin { get; set; }
 
+    public override string ToString() => $"({Id}) {Name}";
+
 }

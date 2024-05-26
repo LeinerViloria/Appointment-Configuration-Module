@@ -21,4 +21,6 @@ public class Service : BaseEntity<int>
     [ForeignKey("Catalogue")]
     public int RowidCatalogue {get; set;}
     public Catalogue? Catalogue{ get; set; }
+
+    public override string ToString() => $"{Name}";
 }

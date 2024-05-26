@@ -18,4 +18,6 @@ public class Contract : BaseEntity<int>
     [Required]
     public int RowidEmployee {get; set;}
     public Employee? Employee{ get; set;}
+
+    public override string ToString() => $"({Id}) - {Employee?.Name}";
 }

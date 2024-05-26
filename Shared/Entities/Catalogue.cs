@@ -9,4 +9,6 @@ public class Catalogue : BaseEntity<int>
 {
     [Required]
     public string Name { get; set; } = null!;
+
+    public override string ToString() => $"{Name}";
 }

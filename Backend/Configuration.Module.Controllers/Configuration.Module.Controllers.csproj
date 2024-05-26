@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Appointment.SDK.Backend" Version="1.0.3" />
+    <PackageReference Include="Appointment.SDK.Backend" Version="1.0.4" />
     <!-- <ProjectReference Include="..\..\..\SDK\Appointment.SDK.Backend\Appointment.SDK.Backend.csproj" /> -->
   </ItemGroup>
 
