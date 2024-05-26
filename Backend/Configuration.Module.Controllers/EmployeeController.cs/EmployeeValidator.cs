@@ -1,5 +1,3 @@
-
-using Appointment.Globals.Enums;
 using Appointment.SDK.Backend.Database;
 using Appointment.SDK.Backend.Validations;
 using Configuration.Entities;
@@ -9,31 +7,27 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Appointment.Configuration.Controllers;
 
-public class ContractValidator : BaseControllerValidator<Contract>
+public class EmployeeValidator : BaseControllerValidator<Employee>
 {
     private readonly IServiceProvider ServiceProvider;
-    public ContractValidator(IServiceProvider serviceProvider)
+    public EmployeeValidator(IServiceProvider serviceProvider)
     {
         ServiceProvider = serviceProvider;
 
-        RuleFor(x => x.EndDate)
-            .GreaterThan(x => x.InitialDate);
-
         RuleFor(x => x)
-            .Must(EmployeeHasNoContract)
-            .WithMessage("El empleado ya se encuentra con un contrato activo");
+            .Must(ExistsEmployee)
+            .WithMessage("El empleado ya existe")
+            .WithName("Id");
     }
 
-    private bool EmployeeHasNoContract(Contract Item)
+    private bool ExistsEmployee(Employee Item)
     {
         dynamic factory = ServiceProvider.GetService(typeof(IDbContextFactory<StoreContext>))!;
         using(StoreContext Context = factory.CreateDbContext())
         {
-            return !Context.Set<Contract>()
+            return !Context.Set<Employee>()
                 .AsNoTracking()
-                .Any(x => x.RowidEmployee == Item.RowidEmployee && 
-                    x.Rowid != Item.Rowid &&
-                    x.Status == EnumRecordStatus.Active);
+                .Any(x => x.Id == Item.Id);
         }
     }
 }
