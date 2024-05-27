@@ -16,6 +16,12 @@ public class ContractValidator : BaseControllerValidator<Contract>
     {
         ServiceProvider = serviceProvider;
 
+        var LimitToCreateContrat = 5;
+
+        RuleFor(x => x.InitialDate)
+            .GreaterThanOrEqualTo(DateOnly.FromDateTime(DateTime.Now).AddDays(-LimitToCreateContrat))
+            .WithMessage($"El plazo para crear un contrato es de {LimitToCreateContrat} días");
+
         RuleFor(x => x.EndDate)
             .GreaterThan(x => x.InitialDate);
 
