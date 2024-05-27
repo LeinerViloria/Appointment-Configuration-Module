@@ -27,7 +27,7 @@ public class EmployeeValidator : BaseControllerValidator<Employee>
         {
             return !Context.Set<Employee>()
                 .AsNoTracking()
-                .Any(x => x.Id == Item.Id);
+                .Any(x => x.Id == Item.Id && x.Rowid != Item.Rowid);
         }
     }
 }
