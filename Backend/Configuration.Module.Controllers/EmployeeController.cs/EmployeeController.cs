@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Appointment.SDK.Backend.Utilities;
 using Configuration.Entities;
+using Appointment.Globals.Enums;
+using Microsoft.EntityFrameworkCore;
 
 namespace Appointment.Configuration.Controllers;
 
@@ -22,5 +24,20 @@ public class EmployeeController(IServiceProvider serviceProvider) : StandardCont
       if(response.Principal == null) return BadRequest();
 
       return Ok();
+    }
+
+    [HttpPost("verifyemployee")]
+    public IActionResult VerifyEmployee([FromBody] string Email)
+    {
+        using var context = CreateContext();
+
+        var Employee = context.Set<Employee>()
+            .AsNoTracking()
+            .Where(x => x.Email == Email && x.Status == EnumRecordStatus.Active)
+            .Select(x => new{
+                x.Rowid, x.Gender, x.IsAdmin
+            }).Single();
+
+        return Ok(Employee);
     }
 }
